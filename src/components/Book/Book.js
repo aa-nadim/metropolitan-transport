@@ -29,83 +29,86 @@ const Book = () => {
             <div className="row">
                 <div className="col-sm-3 ml-5 pl-5" style={{border:'1px solid gray'}}>
                     <div className="p-2">
+                        {
+                        newPlace?
                         <form>
-                            <h4>Pick From</h4>
+                            <div>
+                                <h3 className="bg-primary text-white">{place.place1}</h3>
+                                <p className="bg-danger text-white">To</p>
+                                <h3 className="bg-primary text-white">{place.place2}</h3>
+                            </div>
+                            <br/><br/>
+                            <div className="d-flex justify-content-between bg-white " style={{border:'1px solid green'}}>
+                            {
+                                vehicleType === 'Byke'? <img src={Byke} style={{height:'50px',width:'60px'}} alt=""/> :
+                                vehicleType==='Car'?<img src={Car} style={{height:'50px',width:'60px'}} alt=""/> : 
+                                vehicleType==='Bus'?<img src={Bus} style={{height:'50px',width:'60px'}} alt=""/> : <img src={Train} style={{height:'50px',width:'60px'}} alt=""/>
+                            }
+                            <p>{vehicleType}</p>
+                            <img src={peopleicon} style={{height:'20px',width:'20px'}} alt=""/>
+                            {
+                                vehicleType === 'Byke'? <p>1</p> :
+                                vehicleType==='Car'?<p>4</p>  : 
+                                vehicleType==='Bus'?<p>40</p>  : <p>150</p> 
+                            }
+                            {
+                                vehicleType === 'Byke'? <p>$100</p> :
+                                vehicleType==='Car'?<p>$400</p>  : 
+                                vehicleType==='Bus'?<p>$4000</p>  : <p>$15000</p> 
+                            }
+                            </div>
+                            <br/><br/>
+                            <div className="d-flex justify-content-between bg-white " style={{border:'1px solid green'}}>
+                            {
+                                vehicleType === 'Byke'? <img src={Byke} style={{height:'50px',width:'60px'}} alt=""/> :
+                                vehicleType==='Car'?<img src={Car} style={{height:'50px',width:'60px'}} alt=""/> : 
+                                vehicleType==='Bus'?<img src={Bus} style={{height:'50px',width:'60px'}} alt=""/> : <img src={Train} style={{height:'50px',width:'60px'}} alt=""/>
+                            }
+                            <p>{vehicleType}</p>
+                            <img src={peopleicon} style={{height:'20px',width:'20px'}} alt=""/>
+                            {
+                                vehicleType === 'Byke'? <p>1</p> :
+                                vehicleType==='Car'?<p>4</p>  : 
+                                vehicleType==='Bus'?<p>40</p>  : <p>150</p> 
+                            }
+                            {
+                                vehicleType === 'Byke'? <p>$100</p> :
+                                vehicleType==='Car'?<p>$400</p>  : 
+                                vehicleType==='Bus'?<p>$4000</p>  : <p>$15000</p> 
+                            }
+                            </div>
+                            <br/><br/>
+                            <div className="d-flex justify-content-between bg-white " style={{border:'1px solid green'}}>
+                            {
+                                vehicleType === 'Byke'? <img src={Byke} style={{height:'50px',width:'60px'}} alt=""/> :
+                                vehicleType==='Car'?<img src={Car} style={{height:'50px',width:'60px'}} alt=""/> : 
+                                vehicleType==='Bus'?<img src={Bus} style={{height:'50px',width:'60px'}} alt=""/> : <img src={Train} style={{height:'50px',width:'60px'}} alt=""/>
+                            }
+                            <p>{vehicleType}</p>
+                            <img src={peopleicon} style={{height:'20px',width:'20px'}} alt=""/>
+                            {
+                                vehicleType === 'Byke'? <p>1</p> :
+                                vehicleType==='Car'?<p>4</p>  : 
+                                vehicleType==='Bus'?<p>40</p>  : <p>150</p> 
+                            }
+                            {
+                                vehicleType === 'Byke'? <p>$100</p> :
+                                vehicleType==='Car'?<p>$400</p>  : 
+                                vehicleType==='Bus'?<p>$4000</p>  : <p>$15000</p> 
+                            }
+                            </div>
+                        </form>:
+                        <form>
+                            <h4 className="bg-success text-white">Pick From</h4>
                             <input type="text" name="place1" onBlur={handleBlur}  placeholder="Place name"/>
                             <br/><br/>
-                            <h4>Pick To</h4>
+                            <h4 className="bg-success text-white">Pick To</h4>
                             <input type="text" name="place2" onBlur={handleBlur} placeholder="Place name" required/>
                             <br/><br/>
+                            <button onClick={()=> setNewPlace(!newPlace)}>search</button>
+                             <br/><br/>
                         </form>
-                        <div>
-                        <button onClick={()=> setNewPlace(!newPlace)}>search</button>
-                        </div>
-                        <div>
-                            <div>
-                                <h3>{place.place1}</h3>
-                                <h3>{place.place2}</h3>
-                            </div>
-                            <br/><br/>
-                            <div className="d-flex justify-content-between" style={{border:'1px solid green'}}>
-                            {
-                                vehicleType === 'Byke'? <img src={Byke} style={{height:'50px',width:'60px'}} alt=""/> :
-                                vehicleType==='Car'?<img src={Car} style={{height:'50px',width:'60px'}} alt=""/> : 
-                                vehicleType==='Bus'?<img src={Bus} style={{height:'50px',width:'60px'}} alt=""/> : <img src={Train} style={{height:'50px',width:'60px'}} alt=""/>
-                            }
-                            <p>{vehicleType}</p>
-                            <img src={peopleicon} style={{height:'20px',width:'20px'}} alt=""/>
-                            {
-                                vehicleType === 'Byke'? <p>1</p> :
-                                vehicleType==='Car'?<p>4</p>  : 
-                                vehicleType==='Bus'?<p>40</p>  : <p>150</p> 
-                            }
-                            {
-                                vehicleType === 'Byke'? <p>$100</p> :
-                                vehicleType==='Car'?<p>$400</p>  : 
-                                vehicleType==='Bus'?<p>$4000</p>  : <p>$15000</p> 
-                            }
-                            </div>
-                            <br/><br/>
-                            <div className="d-flex justify-content-between" style={{border:'1px solid green'}}>
-                            {
-                                vehicleType === 'Byke'? <img src={Byke} style={{height:'50px',width:'60px'}} alt=""/> :
-                                vehicleType==='Car'?<img src={Car} style={{height:'50px',width:'60px'}} alt=""/> : 
-                                vehicleType==='Bus'?<img src={Bus} style={{height:'50px',width:'60px'}} alt=""/> : <img src={Train} style={{height:'50px',width:'60px'}} alt=""/>
-                            }
-                            <p>{vehicleType}</p>
-                            <img src={peopleicon} style={{height:'20px',width:'20px'}} alt=""/>
-                            {
-                                vehicleType === 'Byke'? <p>1</p> :
-                                vehicleType==='Car'?<p>4</p>  : 
-                                vehicleType==='Bus'?<p>40</p>  : <p>150</p> 
-                            }
-                            {
-                                vehicleType === 'Byke'? <p>$100</p> :
-                                vehicleType==='Car'?<p>$400</p>  : 
-                                vehicleType==='Bus'?<p>$4000</p>  : <p>$15000</p> 
-                            }
-                            </div>
-                            <br/><br/>
-                            <div className="d-flex justify-content-between" style={{border:'1px solid green'}}>
-                            {
-                                vehicleType === 'Byke'? <img src={Byke} style={{height:'50px',width:'60px'}} alt=""/> :
-                                vehicleType==='Car'?<img src={Car} style={{height:'50px',width:'60px'}} alt=""/> : 
-                                vehicleType==='Bus'?<img src={Bus} style={{height:'50px',width:'60px'}} alt=""/> : <img src={Train} style={{height:'50px',width:'60px'}} alt=""/>
-                            }
-                            <p>{vehicleType}</p>
-                            <img src={peopleicon} style={{height:'20px',width:'20px'}} alt=""/>
-                            {
-                                vehicleType === 'Byke'? <p>1</p> :
-                                vehicleType==='Car'?<p>4</p>  : 
-                                vehicleType==='Bus'?<p>40</p>  : <p>150</p> 
-                            }
-                            {
-                                vehicleType === 'Byke'? <p>$100</p> :
-                                vehicleType==='Car'?<p>$400</p>  : 
-                                vehicleType==='Bus'?<p>$4000</p>  : <p>$15000</p> 
-                            }
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
                 <div className="col-sm-5 ml-5 pl-5" >

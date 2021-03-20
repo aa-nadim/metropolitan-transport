@@ -1,4 +1,3 @@
-import React from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from "./firebase.config";
@@ -27,29 +26,6 @@ export const handleGoogleSignIn = () => {
       console.log(err.message);
     })
   }
-export const handleGithubSignIn = () => {
-  const ghProvider = new firebase.auth.GithubAuthProvider();
-  return  firebase.auth().signInWithPopup(ghProvider)
-  .then(res => {
-    const {displayName, photoURL, email} = res.user;
-    const singedInUser = {
-      isSignedIn: true,
-      name: displayName,
-      email:email,
-      photo: photoURL,
-      success: true
-    }
-    return singedInUser;
-  })
-  .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        var email = error.email;
-        var credential = error.credential;
-        console.log(errorCode, errorMessage, email, credential);
-      });
-  }
-
 export  const handleFbSignIn = () =>{
     const fbProvider = new firebase.auth.FacebookAuthProvider();
     return firebase.auth().signInWithPopup(fbProvider)
@@ -65,10 +41,10 @@ export  const handleFbSignIn = () =>{
       return singedInUser;
     })
     .catch(function(error){
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      var email = error.email;
-      var credential = error.credential;
+      // var errorCode = error.code;
+      // var errorMessage = error.message;
+      // var email = error.email;
+      // var credential = error.credential;
     });
   }
 

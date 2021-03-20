@@ -11,14 +11,17 @@ import Header from './components/Header/Header';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Book from './components/Book/Book';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import NotFound from './components/NotFound/NotFound';
-import back from './images/b.jpg';
+
+
+
 export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  // console.log("loggedInUser",loggedInUser);
   return (
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser]} >
+    <div className="container">
+      <UserContext.Provider value={[loggedInUser, setLoggedInUser]} >
       <p>Name: {loggedInUser.name}</p>
       <Router>
         <Header/>
@@ -35,12 +38,11 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="*">
-            <NotFound></NotFound>
-            </Route>
           </Switch>
       </Router>
     </UserContext.Provider>
+    <br/><br/><br/><br/>
+    </div>
   );
 }
 

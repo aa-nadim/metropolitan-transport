@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { useHistory, useLocation } from "react-router";
 import { Link } from 'react-router-dom';
 import { UserContext } from "../../App";
-import { createUserWithEmailAndPassword, handleFbSignIn, handleGoogleSignIn, handleGithubSignIn, handleSignOut, initializeLoginFramework, signInWithEmailAndPassword } from './LoginManager';
+import { createUserWithEmailAndPassword, handleFbSignIn, handleGoogleSignIn, initializeLoginFramework, signInWithEmailAndPassword } from './LoginManager';
 
 function Login() {
   const [newUser, setNewUser] = useState(false);
@@ -26,25 +26,12 @@ function Login() {
         handleResponse(res, true);
     })
   }
-  const githubSignIn = () => {
-    handleGithubSignIn()
-    .then(res => {
-        handleResponse(res, true);
-    })
-  }
   const fbSignIn = () =>{
     handleFbSignIn()
     .then(res => {
         handleResponse(res, true);
     })
   }
-  const signOut = () => {
-    handleSignOut()
-    .then(res => {
-        handleResponse(res, false);
-    })
-  }
-
   const handleResponse = (res, redirect) =>{
     setUser(res);
     setLoggedInUser(res);
@@ -88,7 +75,7 @@ function Login() {
     <div style={{width:'500px',marginLeft:'400px',textAlign:'center'}}>
         <div style={{border:'1px solid gray'}}>
             {
-               newUser ? <h1>Create an account</h1> : <h1>Login</h1>
+               newUser ? <h1 className="text-success">Create an account</h1> : <h1 className="text-success">Login</h1>
             }
             <br/>
             <form onSubmit={handleSubmit}>
@@ -103,19 +90,17 @@ function Login() {
                 <input type="submit" value={newUser ? 'Create an account' : 'Login'}/>
                 <br/><br/>
                 {
-                    newUser ? <p>Already have an account?<Link to="/login" onClick={() => setNewUser(!newUser)}>Login</Link></p>:
-                    <p>Don’t have an account?<Link  to="/login" onClick={() => setNewUser(!newUser)}>Create an account</Link></p>
+                    newUser ? <p className="bg-success text-white">Already have an account?<Link to="/login" onClick={() => setNewUser(!newUser)}>Login</Link></p>:
+                    <p className="bg-success text-white">Don’t have an account?<Link  to="/login" onClick={() => setNewUser(!newUser)}>Create an account</Link></p>
                 }
                 <br/><br/>
             </form>
         </div>
         <br/><br/>
-        <button onClick={googleSignIn}>Continue with Google</button>
+        <button className="btn btn-success" onClick={googleSignIn}>Continue with Google</button>
         <br/><br/>
-        <button onClick={githubSignIn}>Continue with Github</button>
-        <br/><br/>
-        <button onClick={fbSignIn}>Continue with Facebook</button>
-
+        <button className="btn btn-primary" onClick={fbSignIn}>Continue with Facebook</button>
+        <br/><br/><br/><br/>
     </div> 
   );
 }

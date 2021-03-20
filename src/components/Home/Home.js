@@ -4,8 +4,6 @@ import byke from '../../images/1.png';
 import car from '../../images/2.png';
 import bus from '../../images/3.png';
 import train from '../../images/4.png';
-import back from '../../images/b.jpg';
-
 
 const Home = () => {
     const style = {
@@ -47,14 +45,14 @@ const Home = () => {
             price: 15000
         }
     ]
+    
     return (
-        <div  style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${back})` }}>
+        <div>
             <div style={style}>
             {
                 vehicles.map(vehicle => <Vehicle key={vehicle.vehicleType} vehicle={vehicle}></Vehicle>)
             }
             </div>
-            
         </div>
     );
 };
