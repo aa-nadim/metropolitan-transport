@@ -8,6 +8,8 @@ import {
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Header from './components/Header/Header';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Book from './components/Book/Book';
 
 
 function App() {
@@ -21,7 +23,9 @@ function App() {
             <Route path="/login">
               <Login />
             </Route>
-            
+            <Route path="/book/:vehicleType">
+              <Book />
+            </Route>
             <Route exact path="/">
               <Home />
             </Route>

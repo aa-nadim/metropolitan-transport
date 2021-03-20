@@ -14,40 +14,40 @@ const Home = () => {
     }
     const vehicles = [
         {
-            title: 'Standard Single Room',
+            name: 'Byke',
+            vehicleType: 'Byke',
             description: 'Standard Single Rooms are designed in open -concept living area and have many facilities.',
             imgUrl: byke,
             capacity: 1,
-            bedType: 'Single',
             price: 100
         },
         {
-            title: 'Couple Power Room',
+            name: 'Car',
+            vehicleType: 'Car',
             description: 'Superior Double Rooms are perfectly equipped for traveling couples or friends.',
             imgUrl: car,
             bed: 1,
             capacity: 4,
-            bedType: 'Double',
             avatar: 'D',
             price: 400
         },
         {
-            title: 'Family Capacity Room',
+            name: 'Bus',
+            vehicleType: 'Bus',
             description: ' Have lots of in-room facilities and are designed in open-concept living area.',
             imgUrl: bus,
             bed: 2,
             capacity: 40,
-            bedType: 'Family',
             avatar: 'F',
             price: 4000
         },
         {
-            title: 'Family Capacity Room',
+            name: 'Train',
+            vehicleType: 'Train',
             description: ' Have lots of in-room facilities and are designed in open-concept living area.',
             imgUrl: train,
             bed: 2,
             capacity: 150,
-            bedType: 'Family',
             avatar: 'F',
             price: 15000
         }
