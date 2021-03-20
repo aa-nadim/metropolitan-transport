@@ -4,6 +4,7 @@ import byke from '../../images/1.png';
 import car from '../../images/2.png';
 import bus from '../../images/3.png';
 import train from '../../images/4.png';
+import back from '../../images/b.jpg';
 
 
 const Home = () => {
@@ -26,9 +27,7 @@ const Home = () => {
             vehicleType: 'Car',
             description: 'Superior Double Rooms are perfectly equipped for traveling couples or friends.',
             imgUrl: car,
-            bed: 1,
             capacity: 4,
-            avatar: 'D',
             price: 400
         },
         {
@@ -36,9 +35,7 @@ const Home = () => {
             vehicleType: 'Bus',
             description: ' Have lots of in-room facilities and are designed in open-concept living area.',
             imgUrl: bus,
-            bed: 2,
             capacity: 40,
-            avatar: 'F',
             price: 4000
         },
         {
@@ -46,17 +43,18 @@ const Home = () => {
             vehicleType: 'Train',
             description: ' Have lots of in-room facilities and are designed in open-concept living area.',
             imgUrl: train,
-            bed: 2,
             capacity: 150,
-            avatar: 'F',
             price: 15000
         }
     ]
     return (
-        <div style={style}>
+        <div  style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${back})` }}>
+            <div style={style}>
             {
-                vehicles.map(vehicle => <Vehicle key={vehicle.bedType} vehicle={vehicle}></Vehicle>)
+                vehicles.map(vehicle => <Vehicle key={vehicle.vehicleType} vehicle={vehicle}></Vehicle>)
             }
+            </div>
+            
         </div>
     );
 };
