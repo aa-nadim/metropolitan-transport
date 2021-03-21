@@ -5,7 +5,8 @@ import Byke from '../../images/1.png';
 import Car from '../../images/2.png';
 import Bus from '../../images/3.png';
 import Train from '../../images/4.png';
-import peopleicon from '../../images/peopleicon.png'
+import peopleicon from '../../images/peopleicon.png';
+import { Map, GoogleApiWrapper , Marker } from 'google-maps-react';
 
 const Book = () => {
     const {vehicleType} = useParams();
@@ -19,7 +20,11 @@ const Book = () => {
         newPlaceInfo[e.target.name] = e.target.value;
         setPlace(newPlaceInfo);
     }
-    
+    const mapStyles = {
+        width: '100%',
+        height: '100%',
+      };
+
     return (
         <div>
             <div style={{textAlign: 'center'}}>
@@ -113,12 +118,22 @@ const Book = () => {
                 </div>
                 <div className="col-sm-5 ml-5 pl-5" >
                     <div style={{border:'1px solid gray'}}>
-                        <img src={map} alt="" />
+                        {/* <img src={map} alt="" /> */}
+                        <Map
+                            google={this.props.google}
+                            zoom={8}
+                            style={mapStyles}
+                            initialCenter={{ lat: 47.444, lng: -122.176}}
+                            >
+                            <Marker position={{ lat: 48.00, lng: -122.00}} />
+                        </Map>
+
                     </div>
                 </div>
             </div>
         </div>
     );
+     
 };
 
 export default Book;
