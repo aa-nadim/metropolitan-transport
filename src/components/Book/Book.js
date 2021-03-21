@@ -118,15 +118,15 @@ const Book = () => {
                 </div>
                 <div className="col-sm-5 ml-5 pl-5" >
                     <div style={{border:'1px solid gray'}}>
-                        {/* <img src={map} alt="" /> */}
-                        <Map
+                        <img src={map} alt="" />
+                        {/* <Map
                             google={this.props.google}
                             zoom={8}
                             style={mapStyles}
                             initialCenter={{ lat: 47.444, lng: -122.176}}
                             >
                             <Marker position={{ lat: 48.00, lng: -122.00}} />
-                        </Map>
+                        </Map> */}
 
                     </div>
                 </div>
